@@ -60,7 +60,7 @@ function render(variables = {}) {
             ${role}
             ${location}
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/${newTwitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/${newTwitter}"><i class="fa-brands fa-twitter"></i></a></li>
             <li><a href="https://github.com/${GIT}"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/${newLinkedin}"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/${newInstagram}"><i class="fab fa-instagram"></i></a></li>
