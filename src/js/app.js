@@ -29,13 +29,26 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let fullname = `<div class="name"><h1>${variables.name} ${variables.lastname}</h1>`;
+  if (variables.name == null || variables.lastname == null)
+    fullname = `<div class="name"> <h1>Nombre y Apellido </h1></div>`;
+
+  let role = `<div class="role"><h2>${variables.role}</h2>`;
+  if (variables.role == null) role = `<div class="role"> <h2></h2></div>`;
+
+  let location = `<div class="country"><h3>${variables.country},${variables.city}</h3>`;
+  if (variables.country == null || variables.city == null)
+    location = `<div class="country"> <h3></h3></div>`;
+
+  //let position = `<div class="socialMediaPosition"><ul class="position-${variables.socialMediaPosition}">`;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+            ${fullname}
+            ${role}
+            ${location}
           <ul class="position-right">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
