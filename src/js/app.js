@@ -40,7 +40,17 @@ function render(variables = {}) {
   if (variables.country == null || variables.city == null)
     location = `<div class="country"> <h3></h3></div>`;
 
-  //let position = `<div class="socialMediaPosition"><ul class="position-${variables.socialMediaPosition}">`;
+  let newTwitter = `${variables.twitter}`;
+  if (variables.twitter == null) newTwitter = ``;
+
+  let GIT = `${variables.github}`;
+  if (variables.github == null) GIT = ``;
+
+  let newLinkedin = `${variables.linkedin}`;
+  if (variables.linkedin == null) newLinkedin = ``;
+
+  let newInstagram = `${variables.instagram}`;
+  if (variables.instagram == null) newInstagram = ``;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -49,11 +59,11 @@ function render(variables = {}) {
             ${fullname}
             ${role}
             ${location}
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${newTwitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${GIT}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${newLinkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${newInstagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -74,7 +84,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
